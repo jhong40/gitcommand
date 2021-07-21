@@ -13,6 +13,8 @@ git diff --color-word
 ```
 github.com/git/git
 ```
+
+## common commands
 ```
 git log help
 git help log
