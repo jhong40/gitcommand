@@ -96,3 +96,29 @@ git ls-tree HEAD
 
 
 ```
+
+## Ancestry- Parents
+```
+de1461f^  #parent of cmt de1461f
+HEAD^  # parent of HEAD
+master^
+HEAD~1, HEAD~   #parent of HEAD
+git show HEAD^
+
+^^  #parent of parent
+de1461f^^
+HEAD^^
+HEAD~2 # parent of parent of HEAD
+git show HEAD^^
+
+git show HEAD~2
+git show HEAD~3
+
+
+## ls-tree
+git ls-tree HEAD
+git ls-tree HEAD folder1   #list just the folder
+git ls-tree HEAD folder1/  #list all files under folder1
+
+
+```
