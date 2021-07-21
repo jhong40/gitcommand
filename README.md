@@ -37,9 +37,6 @@ git log --online # reduce long sha to short sha
 git log --graph
 git log --graph --all --oneline --decorate
 
-
-
-
 # HEAD
 refs/head/master
 git diff  #compare working dir to starging by default
