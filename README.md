@@ -19,7 +19,7 @@ github.com/git/git
 git log help
 git help log
 man git-log
-git log -n 5
+git log -n 5  # same as git log -5 
 git log --since=2019-01-01
 git log --until=2020-01-01
 git log --author="Kevin"
