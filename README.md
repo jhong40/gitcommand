@@ -11,8 +11,8 @@ git diff --color-word
 
 ## auto complete
 ```
-contrib/completion/git-completion.bash
 github.com/git/git
+contrib/completion/git-completion.bash
 ```
 
 ## common commands
