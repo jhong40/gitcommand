@@ -219,5 +219,28 @@ https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 + Soft Reset: Move HEAD, Doesn't change staging index, cur dir 
 ```
 git reset --soft <tree-is>
+
+[root@kubernetes01 gitpractice (master)]# git branch
+* master
+  seo_feature
+  short
+[root@kubernetes01 gitpractice (master)]# git checkout -b reset_branch short
+Switched to a new branch 'reset_branch'
+[root@kubernetes01 gitpractice (reset_branch)]# git branch
+  master
+* reset_branch
+  seo_feature
+  short
+[root@kubernetes01 gitpractice (reset_branch)]# git log -1
+commit 127ea2841dd0e8ccffc7925b12cf6c1056cb3003 (HEAD -> reset_branch, short)
+Author: Jack.Liu <blah@blah.com>
+Date:   Wed Jul 21 17:30:55 2021 -0400
+
+    another
+[root@kubernetes01 gitpractice (reset_branch)]#
+
 ```
-+ Mixed Reset: 
++ Mixed Reset: Move HEAD, Change staging index, Doesn't change working dir
+```
+git reset --mixed tree-ish  #defult as git reset tree-ish
+```
