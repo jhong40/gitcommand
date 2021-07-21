@@ -134,5 +134,85 @@ git ls-tree HEAD
 git ls-tree HEAD folder1   #list just the folder
 git ls-tree HEAD folder1/  #list all files under folder1
 
+```
+## Branch
+```
+git branch  #show branches
+git branch new_feature
+cat .git/HEAD #show head 
+root@kubernetes01:~/gitpractice/.git/refs/heads# ls -tlr
+total 8
+-rw-r--r-- 1 root root 41 Jul 21 16:21 master
+-rw-r--r-- 1 root root 41 Jul 21 17:12 new_feature
+
+git checkout new_feature
+git branch
+root@kubernetes01:~/gitpractice# git branch
+  master
+* new_feature
+root@kubernetes01:~/gitpractice# cat .git/HEAD
+ref: refs/heads/new_feature
+
+git checkout -b branch1 # create new branch1 and checkout
+
+## cannt switch to a branch: commit to the current branch, remove it, stash
+
+# compare branches
+git diff --color-words new_feature..short
+git branch --merged
+git branch --no-merged
+
+root@kubernetes01:~/gitpractice# git branch
+  master
+  new_feature
+* short
+root@kubernetes01:~/gitpractice# git branch --merged
+  master
+  new_feature
+* short
+
+root@kubernetes01:~/gitpractice# git checkout new_feature
+Switched to branch 'new_feature'
+root@kubernetes01:~/gitpractice# git branch --merged
+  master
+* new_feature
+root@kubernetes01:~/gitpractice# git branch --no-merged
+  short
+
+
+# Rename Branch
+root@kubernetes01:~/gitpractice# git branch
+  master
+* new_feature
+  short
+root@kubernetes01:~/gitpractice# git branch -m seo_feature
+root@kubernetes01:~/gitpractice# git branch
+  master
+* seo_feature
+  short
+# git branch -m br1 br2   # even without checkout br1  
+
+# Delete Branch
+root@kubernetes01:~/gitpractice# git checkout master
+Switched to branch 'master'
+root@kubernetes01:~/gitpractice# git branch branch2delete
+root@kubernetes01:~/gitpractice# git branch
+  branch2delete
+* master
+  seo_feature
+  short
+root@kubernetes01:~/gitpractice# git branch -d branch2delete
+Deleted branch branch2delete (was a6aabc6).
+root@kubernetes01:~/gitpractice# git branch
+* master
+  seo_feature
+  short
+
+git branch -D branch2delete   # if any un merged commit in it
+
+# git prompt
+https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+
+
 
 ```
