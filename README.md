@@ -213,6 +213,11 @@ git branch -D branch2delete   # if any un merged commit in it
 # git prompt
 https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 
-
-
 ```
+
+### Reset Types
++ Soft Reset: Move HEAD, Doesn't change staging index, cur dir 
+```
+git reset --soft <tree-is>
+```
++ Mixed Reset: 
