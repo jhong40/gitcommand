@@ -16,7 +16,6 @@ github.com/git/git
 
 ## common commands
 ```
-git log help
 git help log
 man git-log
 git log -n 5  # same as git log -5 
