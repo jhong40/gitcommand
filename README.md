@@ -11,6 +11,7 @@ git diff --color-word
 
 ## auto complete
 ```
+contrib/completion/git-completion.bash
 github.com/git/git
 ```
 
