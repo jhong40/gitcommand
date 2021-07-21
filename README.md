@@ -22,8 +22,22 @@ man git-log
 git log -n 5  # same as git log -5 
 git log --since=2019-01-01
 git log --until=2020-01-01
+git log --until="3 days ago"
+git log --after=2.weeks --before=3.days
 git log --author="Kevin"
 git log --grep="Init"
+git log cmit#1..cmit#2
+git log cmit#1..HEAD
+git log file1  #show all the cmit on this file
+git log -p #show cmit info, also with the exact changes  -p stadnds for patch or change
+git log --stat   #show how many changes, not what changes
+git log --foramt=oneline  # online, short, medium, full, fuller, etc
+git log --online # reduce long sha to short sha
+git log --graph
+git log --graph --all --oneline --decorate
+
+
+
 
 # HEAD
 refs/head/master
