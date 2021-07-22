@@ -250,6 +250,7 @@ git reset --hard tree-ish
 ```
 
 ### Merge code
+```
 git checkout master
 git merge seo_feature
 root@kubernetes01:~/gitpractice# git log --oneline
@@ -262,13 +263,15 @@ root@kubernetes01:~/gitpractice# git branch --merged
 * master
   seo_feature
 root@kubernetes01:~/gitpractice#
-
+```
 
 # reslve conflict
+```
 git diff --color-words  master..text_edits a.txt
 git show --color-words 
-
+```
 ### Stash
+```
 root@kubernetes01:~/gitpractice# git status
 On branch short
 Changes not staged for commit:
@@ -359,4 +362,4 @@ stash@{0}: On short: another
 root@kubernetes01:~/gitpractice# git stash clear  # delete all the stash
 root@kubernetes01:~/gitpractice# git stash list  
 root@kubernetes01:~/gitpractice#
-
+```
