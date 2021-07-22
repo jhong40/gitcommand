@@ -364,9 +364,22 @@ root@kubernetes01:~/gitpractice# git stash list
 root@kubernetes01:~/gitpractice#
 ```
 
+
 # Remote
 git remote add origin https://github.com/....
 git remote 
 git remote -v
+git remote rm origin
+git branch -r   # remote branch
+git branch -a   # all branch: local and remote
 
+git clone  https://github.com/jhong40/mytest.git anotherfolder
+git fetch origin # bring the remote to the local origin
+
+git checkout master
+git fetch
+git merge origin/master  #resolve any conflict
+
+
+git pull # = git fetch + git merge
 
