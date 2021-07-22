@@ -367,6 +367,7 @@ root@kubernetes01:~/gitpractice#
 
 # Remote
 ```
+#remote branch cannot be check out
 git remote add origin https://github.com/....
 git remote 
 git remote -v
@@ -394,8 +395,9 @@ git push -u brancha origin
 # delete remote branch
 git push orgin :brancha  # delete brancha
 git push origin --delete brancha
-
-#FLOW
+```
+# FLOW
+```
 ## Developer1
 git checkout master
 git fetch
@@ -427,15 +429,5 @@ git fetch
 git merge origin/master   #if origin/master has change
 git merge feature1
 git push   # master is tracked, so no origin master
-
-
-
-
-
-
-
-#remote branch cannot be check out
-
-
 
 ```
