@@ -32,7 +32,7 @@ git log cmit#1..HEAD
 git log file1  #show all the cmit on this file
 git log -p #show cmit info, also with the exact changes  -p stadnds for patch or change
 git log --stat   #show how many changes, not what changes
-git log --foramt=oneline  # online, short, medium, full, fuller, etc
+git log --foramt=oneline  # online, short, medium, full, fuller, etcgit
 git log --online # reduce long sha to short sha
 git log --graph
 git log --graph --all --oneline --decorate
@@ -244,3 +244,119 @@ Date:   Wed Jul 21 17:30:55 2021 -0400
 ```
 git reset --mixed tree-ish  #defult as git reset tree-ish
 ```
++ Hard Reset: Move HEAD, Change staging index, Change working dir (return to old state, discard all  code changes)
+```
+git reset --hard tree-ish  
+```
+
+### Merge code
+git checkout master
+git merge seo_feature
+root@kubernetes01:~/gitpractice# git log --oneline
+58d4df5 (HEAD -> master, seo_feature) Modifies a.txt in new-feature
+a6aabc6 add eee
+0a39700 adding more
+ad82f87 adding a.txt
+root@kubernetes01:~/gitpractice# git diff master..seo_feature
+root@kubernetes01:~/gitpractice# git branch --merged
+* master
+  seo_feature
+root@kubernetes01:~/gitpractice#
+
+
+# reslve conflict
+git diff --color-words  master..text_edits a.txt
+git show --color-words 
+
+### Stash
+root@kubernetes01:~/gitpractice# git status
+On branch short
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   a.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@kubernetes01:~/gitpractice# git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        a.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+root@kubernetes01:~/gitpractice# git stash save "stash1"
+Saved working directory and index state On short: stash1
+root@kubernetes01:~/gitpractice# git status
+On branch short
+nothing to commit, working tree clean
+root@kubernetes01:~/gitpractice# cat a.txt
+iii
+ddd
+eee
+new-feature
+short
+another change
+root@kubernetes01:~/gitpractice# git checkout master
+Switched to branch 'master'
+root@kubernetes01:~/gitpractice# git checkout short
+Switched to branch 'short'
+root@kubernetes01:~/gitpractice# git stash list
+stash@{0}: On short: stash1
+root@kubernetes01:~/gitpractice# git stash show stash@{0}
+ a.txt | 1 +
+ 1 file changed, 1 insertion(+)
+root@kubernetes01:~/gitpractice# git stash show -p stash@{0}
+diff --git a/a.txt b/a.txt
+index c0f1036..ef4a577 100644
+--- a/a.txt
++++ b/a.txt
+@@ -3,4 +3,5 @@ ddd
+ eee
+ new-feature
+ short
++short1
+ another change
+root@kubernetes01:~/gitpractice#
+root@kubernetes01:~/gitpractice# git stash pop    ## pop remove stash
+On branch short
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   a.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (6ba9ec2c2844157626ca72286fbe57156cc65eaa)
+root@kubernetes01:~/gitpractice#
+root@kubernetes01:~/gitpractice# git stash save "another"
+Saved working directory and index state On short: another
+
+root@kubernetes01:~/gitpractice# git stash list
+stash@{0}: On short: another
+root@kubernetes01:~/gitpractice# git stash apply   ## doens't remove stash
+On branch short
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   a.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@kubernetes01:~/gitpractice# git stash list
+stash@{0}: On short: another
+root@kubernetes01:~/gitpractice#
+
+root@kubernetes01:~/gitpractice# git stash list
+stash@{0}: On short: another
+root@kubernetes01:~/gitpractice# git stash save "Delete me"
+Saved working directory and index state On short: Delete me
+root@kubernetes01:~/gitpractice# git stash list
+stash@{0}: On short: Delete me
+stash@{1}: On short: another
+root@kubernetes01:~/gitpractice# git stash drop stash@{0}
+Dropped stash@{0} (bdfc2ede72cf9c8867155121fd73e75b434afefb)
+root@kubernetes01:~/gitpractice# git stash list
+stash@{0}: On short: another
+root@kubernetes01:~/gitpractice# git stash clear  # delete all the stash
+root@kubernetes01:~/gitpractice# git stash list  
+root@kubernetes01:~/gitpractice#
+
