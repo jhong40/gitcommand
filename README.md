@@ -366,6 +366,7 @@ root@kubernetes01:~/gitpractice#
 
 
 # Remote
+```
 git remote add origin https://github.com/....
 git remote 
 git remote -v
@@ -383,3 +384,58 @@ git merge origin/master  #resolve any conflict
 
 git pull # = git fetch + git merge
 
+# create loal branch from remote
+git branch brancha origin/brancha  #create branch based on origin/brancha
+git checkout brancha origin/brancha
+
+# create remote brach
+git push -u brancha origin
+
+# delete remote branch
+git push orgin :brancha  # delete brancha
+git push origin --delete brancha
+
+#FLOW
+## Developer1
+git checkout master
+git fetch
+git merge origin/master
+git checkout -b feature1
+git add myfile
+git commit -m "adding feature1"
+git fetch
+git push -u feature1 origin
+
+## Developer2
+git checkout master
+git fetch
+git merge origin/master
+git checkout -b feature1 origin/feature1
+git log
+git show sha#
+git commit -am "improve feature1"
+git fetch
+git push   # it is a tracked branch, no need for origial feature1
+
+
+## Developer1
+git fetch
+git log -p feature1..origin/feature1
+git merge origin/feature1    #ok for the improve feature1
+git checkout master
+git fetch
+git merge origin/master   #if origin/master has change
+git merge feature1
+git push   # master is tracked, so no origin master
+
+
+
+
+
+
+
+#remote branch cannot be check out
+
+
+
+```
