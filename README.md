@@ -363,3 +363,10 @@ root@kubernetes01:~/gitpractice# git stash clear  # delete all the stash
 root@kubernetes01:~/gitpractice# git stash list  
 root@kubernetes01:~/gitpractice#
 ```
+
+# Remote
+git remote add origin https://github.com/....
+git remote 
+git remote -v
+
+
