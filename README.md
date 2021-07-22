@@ -270,7 +270,7 @@ root@kubernetes01:~/gitpractice#
 git diff --color-words  master..text_edits a.txt
 git show --color-words 
 ```
-### Stash
+## Stash
 ```
 root@kubernetes01:~/gitpractice# git status
 On branch short
