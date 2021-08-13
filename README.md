@@ -432,3 +432,29 @@ git merge feature1
 git push   # master is tracked, so no origin master
 
 ```
+# Blame: shows who made the change on that each line, and when
+```
+git blame file1.txt  # shows who made the change on that each line, and when
+git blame -w File1.txt  #ignor white space
+git blame -L 100,105 file1.txt
+git blame -L 100,+5 file1.txt   #100,105
+git blame d9dba0 file1.txt
+git blame d9dba0 -- file1.txt
+
+git annotate file1.txt   # similar to blame, diff output format
+git config --global alias.praise blame   # praise = blame, git praise file1.txt = git blame file1.txt
+```
+# bisect: app used to work, not anymore. Need to find which cmt introduing the bug
+```
+git bisect start
+git bisect bad  # git bisect bad HEAD
+git bisect good <treeish>  # last known good version
+
+#git will found the mid point version, user need to test and confirm it is good or bad
+#git bisect good
+#git bisect bad
+#eventually it will find the version which introduce the bug
+
+git bisect reset
+```
+
