@@ -31,6 +31,7 @@ git log cmit#1..cmit#2
 git log cmit#1..HEAD
 git log file1  #show all the cmit on this file
 git log -p #show cmit info, also with the exact changes  -p stadnds for patch or change
+git log -L 100,150:myfile.txt
 git log --stat   #show how many changes, not what changes
 git log --foramt=oneline  # online, short, medium, full, fuller, etcgit
 git log --online # reduce long sha to short sha
