@@ -62,9 +62,26 @@ vagrant@vagrant:~/test/.git/objects/3b$ git cat-file -p 3b95df0ac6365c72e9b0ff6c
 100644 blob b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e    file1.txt
 100644 blob 4400aae52a27341314f423095846b1f215a7cf08    file2.txt
 vagrant@vagrant:~/test/.git/objects/3b$
-
-
 ```
+![image](https://user-images.githubusercontent.com/13383120/232655279-0544da61-e117-4a77-ab7e-85890e617d2c.png)
+![image](https://user-images.githubusercontent.com/13383120/232655143-13003484-aef2-4762-b763-26f6f1b571e3.png)
+```
+vagrant@vagrant:~/test$ find .git/objects -type f
+.git/objects/3b/95df0ac6365c72e9b0ff6c449645c87e6e1159
+.git/objects/44/00aae52a27341314f423095846b1f215a7cf08
+.git/objects/b7/aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
+vagrant@vagrant:~/test$ git cat-file 3b95 -t
+tree
+vagrant@vagrant:~/test$ git read-tree 3b95    # read from git repo -> staging
+vagrant@vagrant:~/test$ git ls-files          # list staging 
+file1.txt
+file2.txt
+vagrant@vagrant:~/test$ git ls-files -s
+100644 b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e 0       file1.txt
+100644 4400aae52a27341314f423095846b1f215a7cf08 0       file2.txt
+vagrant@vagrant:~/test$
+```
+![image](https://user-images.githubusercontent.com/13383120/232656546-294784e0-2255-4156-a318-7ab8f804b884.png)
 
 
 ## main
