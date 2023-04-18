@@ -83,6 +83,17 @@ vagrant@vagrant:~/test$
 ```
 ![image](https://user-images.githubusercontent.com/13383120/232656546-294784e0-2255-4156-a318-7ab8f804b884.png)
 
+```
+vagrant@vagrant:~/test$ git checkout-index -a    # staging -> working dir
+vagrant@vagrant:~/test$ ls -tlr
+total 8
+-rw-rw-r-- 1 vagrant vagrant 30 Apr 18 02:43 file2.txt
+-rw-rw-r-- 1 vagrant vagrant 11 Apr 18 02:43 file1.txt
+vagrant@vagrant:~/test$ cat file1.txt
+```
+![image](https://user-images.githubusercontent.com/13383120/232657172-f55a71b3-a1a2-49b7-a5bb-7207c74e1199.png)
+
+
 
 ## main
 ```
