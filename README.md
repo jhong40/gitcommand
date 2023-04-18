@@ -97,7 +97,7 @@ vagrant@vagrant:~/test$ cat file1.txt
 git config --global user.name "Jack Liu"
 git config --global user.email "jack.liu@aaa.com"
 git config --list
-``
+```
 
 ## main
 ```
