@@ -6,6 +6,8 @@
 
 ![image](https://user-images.githubusercontent.com/13383120/232651833-b824bd00-4a99-41ed-852d-9c88ef3e7649.png)
 ![image](https://user-images.githubusercontent.com/13383120/232652126-43f422de-480c-49d5-8ac8-46ab4fef92ea.png)
+![image](https://user-images.githubusercontent.com/13383120/232653851-a41e70d4-cbfd-4d44-a30b-80dd2c3a3c62.png)
+
 
 
 
@@ -36,6 +38,32 @@ drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 01:16 b7
 drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 01:47 44
 
 git cat-file -p 4400aae52a27341314f423095846b1f215a7cf08
+Second file in Git repository
+
+vagrant@vagrant:~/test$ cat ../temp-tree.txt
+100644 blob b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e    file1.txt
+100644 blob 4400aae52a27341314f423095846b1f215a7cf08    file2.txt
+vagrant@vagrant:~/test$ cat ../temp-tree.txt  | git mktree
+3b95df0ac6365c72e9b0ff6c449645c87e6e1159
+vagrant@vagrant:~/test$
+
+vagrant@vagrant:~/test/.git/objects$ ls -tlr
+total 20
+drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 01:00 pack
+drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 01:00 info
+drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 01:16 b7
+drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 01:47 44
+drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 02:17 3b
+vagrant@vagrant:~/test/.git/objects/3b$ ls -tlr
+total 4
+-r--r--r-- 1 vagrant vagrant 80 Apr 18 02:17 95df0ac6365c72e9b0ff6c449645c87e6e1159
+
+vagrant@vagrant:~/test/.git/objects/3b$ git cat-file -p 3b95df0ac6365c72e9b0ff6c449645c87e6e1159
+100644 blob b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e    file1.txt
+100644 blob 4400aae52a27341314f423095846b1f215a7cf08    file2.txt
+vagrant@vagrant:~/test/.git/objects/3b$
+
+
 ```
 
 
