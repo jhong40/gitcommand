@@ -1,6 +1,7 @@
 # gitcommand
 
 ## git low level
+```
 echo "Hello, Git" | git hash-object --stdin -w  # b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
 git cat-file -p b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
 Hello, Git
@@ -24,7 +25,7 @@ drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 01:16 b7
 drwxrwxr-x 2 vagrant vagrant 4096 Apr 18 01:47 44
 
 git cat-file -p 4400aae52a27341314f423095846b1f215a7cf08
-
+```
 
 
 ## main
