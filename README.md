@@ -1,4 +1,6 @@
 # gitcommand
+![image](https://user-images.githubusercontent.com/13383120/232651418-536fedf8-9a57-4454-b463-ee5ae5cbc2f0.png)
+
 ![image](https://user-images.githubusercontent.com/13383120/232650059-c1c55167-d99a-4686-adb2-87d1d3f222cf.png)
 ![image](https://user-images.githubusercontent.com/13383120/232650767-1b21a2d7-65ef-4ee0-a22f-83f09f0d588f.png)
 
