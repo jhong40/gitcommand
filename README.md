@@ -12,9 +12,18 @@
 
 
 
+##
+```
+git rm --cached file3.txt    # remove file3.txt from stage
+git ls-files  [-s]  # display stage files
+
+```
 
 ## git low level
 ```
+
+
+
 echo "Hello, Git" | git hash-object --stdin -w  # b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
 git cat-file -p b7aec520dec0a7516c18eb4c68b64ae1eb9b5a5e
 Hello, Git
