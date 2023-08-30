@@ -106,6 +106,7 @@ vagrant@vagrant:~/test$ cat file1.txt
 
 </details>
 
+## Config
 ```
 git config --global user.name "Jack Liu"
 git config --global user.email "jack.liu@aaa.com"
