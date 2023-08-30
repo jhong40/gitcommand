@@ -105,7 +105,7 @@ vagrant@vagrant:~/test$ cat file1.txt
 ```
 ![image](https://user-images.githubusercontent.com/13383120/232657172-f55a71b3-a1a2-49b7-a5bb-7207c74e1199.png)
 
-</details>
+
 ```
 git config --global user.name "Jack Liu"
 git config --global user.email "jack.liu@aaa.com"
@@ -114,6 +114,8 @@ git config --list
 cat ~/.gitconfig
 
 ```
+</details>
+
 
 ## main
 ```
