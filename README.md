@@ -115,6 +115,7 @@ cat ~/.gitconfig
 ```
 git add .
 git commit -m "blah"
+git commit -am "blah"   # add and commit 
 git status
 git diff
 git diff --color-word
