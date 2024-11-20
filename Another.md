@@ -28,5 +28,19 @@ git add --patch a.txt   # stage part of the file
    # s - split into smaller hunk
    # 3 changes, add last one: s, n, n, y
 
+git log --graph --decorate --oneline
+git show cm2
+git show HEAD
+git show HEAD^   #parent of head
+git show HEAD^^  = git show HEAD~2   # parent of parent of HEAD
+git show HEAD@{'1 month ago'}
+
+git blame a.txt  # who changes what
+git diff c1 c2
+git diff HEAD HEAD~2
+
+git log --patch
+git log -3 --oneline
+git log HEAD~5..HEAD~ --oneline   # 5 cm earlier and parent of HEAD
 
 ```
