@@ -51,3 +51,7 @@ git restore --staged a.txt;   git restore a.txt  # from repo -> stg -> ws
 
 git restore a.txt --source=c5   # repo => ws  (only impact ws, not repo/stg)
 ```
+### Amend commit
+```
+git commit --ammend    # it will use the same commit (not create a new commit)
+```
