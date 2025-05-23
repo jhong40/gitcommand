@@ -18,16 +18,20 @@ git show ${commit#}  #  show diff of the file b4 commit and after
 
 
 ```
-git add .  # work space => stage
-git restore --stage file1  # stage => workspace
-git diff   # working space vs staging
-git diff --cached  # staging vs repo
+git add .                  # work space => stage
+git restore --staged file1  # stg: rm file1
+git diff                   # ws vs stg
+git diff --cached          # stg vs repo
 
 git diff --word-diff   # show the word diff... otherwise, it shows the whole changes
 git diff --word-diff=color # = git diff --color-words    # show color diff
 ```
 ### Add, delete, rename files
 ```
-git rm a.txt         # remove a.txt from working, and stg
-git mv a.txt b.txt   # rename a.txt -> b.txt in both ws and stg
+git rm a.txt                 # ws+stg: remove a.txt 
+git mv a.txt b.txt           # ws+stg: a.txt -> b.txt 
+
+git rm --cached a.txt        # stg: rm a.txt
+git mv --cached a.txt b.txt  # stg: a.txt -> b.txt
+
 ```
