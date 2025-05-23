@@ -60,3 +60,8 @@ git commit --ammend    # it will use the same commit (not create a new commit)
 ```
 git revert c5                # repo: revert back to c5
 ```
+### Remove untracked files
+```
+git clean -n       # dry run: show untracked files that wourld be removed
+git clean -f       # actually remove the untracked files
+```
