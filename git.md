@@ -17,3 +17,11 @@ git show ${commit#}  #  show diff of the file b4 commit and after
 ```
 
 
+```
+git add .  # work space => stage
+git restore --stage file1  # stage => workspace
+git diff   # befor: commet after commit: git show #{commit sha}
+
+git diff --word-diff   # show the word diff... otherwise, it shows the whole changes
+git diff --word-diff=color # = git diff --color-words    # show color diff
+```
