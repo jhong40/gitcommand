@@ -14,6 +14,7 @@ git config --list
 ```
 git log  # show some commit
 git show ${commit#}  #  show diff of the file b4 commit and after
+git show --stat      # show # file changed, # inserts # deletes
 ```
 
 
