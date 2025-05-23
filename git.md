@@ -35,3 +35,11 @@ git rm --cached a.txt        # stg: rm a.txt
 git mv --cached a.txt b.txt  # stg: a.txt -> b.txt
 
 ```
+### compare commit
+```
+git log --oneline
+git show c1
+git diff c1 c2
+git diff c1 c2 -- a.txt      # only show a.txt change
+git diff --stat c1 c2        # show files changed, # of char changed
+```
