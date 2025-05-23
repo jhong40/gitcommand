@@ -18,10 +18,10 @@ git show ${commit#}  #  show diff of the file b4 commit and after
 
 
 ```
-git add .                  # work space => stage
-git restore --staged file1  # stg: rm file1
-git diff                   # ws vs stg
-git diff --cached          # stg vs repo
+git add .                   # work space => stage
+git restore --staged file1  # file1: repo => stg
+git diff                    # ws vs stg
+git diff --cached           # stg vs repo
 
 git diff --word-diff   # show the word diff... otherwise, it shows the whole changes
 git diff --word-diff=color # = git diff --color-words    # show color diff
@@ -42,4 +42,10 @@ git show c1
 git diff c1 c2
 git diff c1 c2 -- a.txt      # only show a.txt change
 git diff --stat c1 c2        # show files changed, # of char changed
+```
+### Restore to previous version
+```
+git restore a.txt            # a.txt stg=>ws
+git restore .
+git restore --stage a.txt;   git restore a.txt  # from repo -> stg -> ws
 ```
