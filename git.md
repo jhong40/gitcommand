@@ -56,3 +56,7 @@ git restore a.txt --source=c5   # repo => ws  (only impact ws, not repo/stg)
 ```
 git commit --ammend    # it will use the same commit (not create a new commit)
 ```
+### Revert commit
+```
+git revert c5                # repo: revert back to c5
+```
