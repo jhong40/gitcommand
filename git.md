@@ -47,5 +47,5 @@ git diff --stat c1 c2        # show files changed, # of char changed
 ```
 git restore a.txt            # a.txt stg=>ws
 git restore .
-git restore --stage a.txt;   git restore a.txt  # from repo -> stg -> ws
+git restore --staged a.txt;   git restore a.txt  # from repo -> stg -> ws
 ```
