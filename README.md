@@ -266,6 +266,8 @@ total 8
 -rw-r--r-- 1 root root 41 Jul 21 17:12 new_feature
 
 git switch new_feature   # switch to new branch
+git switch -c branch1    # create and switch to it
+
 git checkout new_feature
 git branch
 root@kubernetes01:~/gitpractice# git branch
