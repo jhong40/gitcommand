@@ -338,6 +338,26 @@ https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 
 ```
 
+### Tagging - like a bookmark to a commit
+```
+git tag issue_123 655da716     # issue_123 tag -> sha 655da716
+git tag mytag                  # mytag -> head
+git tag -a v1.0 commit#        # will open editor to input msg
+git tag -am "Version 1.0" v1.0 commit#    # like git commit -am "aaa"
+git tag -d v1.0                # delete the tag, the commit# remains
+
+git tag 
+git tag --list                  # same as above
+git tag -l                      # same as above
+
+git tag -l "v2.*"
+git tag -n
+
+# push tags to remote
+git push origin v1.0
+git push origin --tags   
+git push -d origin v1.0     # delete v1.0 tag from remote
+```
 ### Reset Types
 + Soft Reset: Move HEAD, Doesn't change staging index, cur dir 
 ```
