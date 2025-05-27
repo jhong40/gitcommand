@@ -258,7 +258,7 @@ git ls-tree HEAD folder1/  #list all files under folder1
 ## Branch
 ```
 git branch  #show branches
-git branch new_feature
+git branch new_feature  # create new new_feature branch, but not switch to it 
 cat .git/HEAD #show head 
 root@kubernetes01:~/gitpractice/.git/refs/heads# ls -tlr
 total 8
