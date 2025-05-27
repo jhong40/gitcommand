@@ -265,6 +265,7 @@ total 8
 -rw-r--r-- 1 root root 41 Jul 21 16:21 master
 -rw-r--r-- 1 root root 41 Jul 21 17:12 new_feature
 
+git switch new_feature   # switch to new branch
 git checkout new_feature
 git branch
 root@kubernetes01:~/gitpractice# git branch
