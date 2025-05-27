@@ -65,3 +65,25 @@ git revert c5                # repo: revert back to c5
 git clean -n       # dry run: show untracked files that wourld be removed
 git clean -f       # actually remove the untracked files
 ```
+### Git ignore
+```
+# ignore all files in a dir with trailing slash
+- /plugins/
+- /asset/videos/
+# pattern
+** - all dir or files insde a direct
+*  - any chars besides /
+?  - any on char besides /
+[aeiou] or [0-9] - a char in the set
+! - negates a file pattern
+    /searchindex/*            # ignore all but not config.yml
+    !/searchindex/config.yml
+
+# golobal ignore files
+git config --global core.excludesFile ~/.gitignore_global
+
+# track empty directory
+- add a file to any "emty" directory
+- .gitkeep
+```
+
