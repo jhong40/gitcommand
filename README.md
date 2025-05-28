@@ -406,6 +406,13 @@ git reset --hard tree-ish
 ### Merge code
 ```
 git checkout master        # switch to receiving br 1st
+git merge br1              # will give the conflict
+git merge --abort          # abort the merge
+# manually resolve the conflict
+git add f1 f2              # 
+git commit -m "aaa"        # after this, merge complete
+
+
 git merge seo_feature
 root@kubernetes01:~/gitpractice# git log --oneline
 58d4df5 (HEAD -> master, seo_feature) Modifies a.txt in new-feature
