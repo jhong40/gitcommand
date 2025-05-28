@@ -538,8 +538,15 @@ git remote rm origin
 git branch -r   # remote branch
 git branch -a   # all branch: local and remote
 
-git clone  https://github.com/jhong40/mytest.git anotherfolder
-git fetch origin # bring the remote to the local origin
+git remote show origin
+
+
+git clone  https://github.com/jhong40/mytest.git anotherfolder   # cd anotherfolder: you will see the code
+git fetch origin         # bring the main from remote to the origin/main
+git merge origin/main    # merge the origin/main into local main (assume in local main branch)
+
+git pull = git fetch + git merge 
+
 
 git checkout master
 git fetch
@@ -548,12 +555,19 @@ git merge origin/master  #resolve any conflict
 
 git pull # = git fetch + git merge
 
+# push changes to remote
+git push remote localbr:remotebr  # generic
+git push origin main:main         # example
+git push                          # if tracking in place
+
 # create loal branch from remote
 git branch brancha origin/brancha  #create branch based on origin/brancha
 git checkout brancha origin/brancha
 
-# create remote brach
-git push -u brancha origin
+# create remote brach 
+git push -u brancha origin     # -u is upstream, tracking
+
+# git config --global push.autoSetupReomte true   # this is to avoid -u everytime. It adds -u automatically.
 
 # delete remote branch
 git push orgin :brancha  # delete brancha
