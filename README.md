@@ -369,11 +369,11 @@ git push origin v1.0
 git push origin --tags   
 git push -d origin v1.0     # delete v1.0 tag from remote
 ```
-### Reset Types
+### Reset 
 + c1,c2,c3,c4,c5,c6,c7/head/main  reset to c5: c1,c2,c3,c4,c5/head/main    c6,c7 becomes orphan, can be branch to refer to it before reset
-+ Soft Reset: Move HEAD, Doesn't change staging index, cur dir 
++ Soft Reset: Move HEAD/branch, Doesn't change staging index, cur dir 
 ```
-git reset --soft <tree-is>
+git reset --soft c5
 
 [root@kubernetes01 gitpractice (master)]# git branch
 * master
@@ -386,18 +386,17 @@ Switched to a new branch 'reset_branch'
 * reset_branch
   seo_feature
   short
-[root@kubernetes01 gitpractice (reset_branch)]# git log -1
-commit 127ea2841dd0e8ccffc7925b12cf6c1056cb3003 (HEAD -> reset_branch, short)
-Author: Jack.Liu <blah@blah.com>
-Date:   Wed Jul 21 17:30:55 2021 -0400
 
-    another
-[root@kubernetes01 gitpractice (reset_branch)]#
+# c1,c2,c3,c4,c5, new changes: c6,c7
+git reset -soft c5
+git add .
+git commit -m "aaa"    # this will create new c6 (original c6,c7 will be orphan)
 
 ```
-+ Mixed Reset: Move HEAD, Change staging index, Doesn't change working dir
++ Mixed Reset: Move HEAD/branch, Change staging index, Doesn't change working dir
 ```
-git reset --mixed tree-ish  #defult as git reset tree-ish
+git reset --mixed c5  # this is the defult as git reset c5
+git reset c5          # same as above
 ```
 + Hard Reset: Move HEAD, Change staging index, Change working dir (return to old state, discard all  code changes)
 ```
