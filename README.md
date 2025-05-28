@@ -421,6 +421,8 @@ root@kubernetes01:~/gitpractice#
 
 # reslve conflict
 ```
+git merge br1      #
+
 git diff --color-words  master..text_edits a.txt
 git show --color-words 
 ```
