@@ -405,7 +405,7 @@ git reset --hard tree-ish
 
 ### Merge code
 ```
-git checkout master
+git checkout master        # switch to receiving br 1st
 git merge seo_feature
 root@kubernetes01:~/gitpractice# git log --oneline
 58d4df5 (HEAD -> master, seo_feature) Modifies a.txt in new-feature
