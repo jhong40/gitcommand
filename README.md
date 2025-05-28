@@ -268,6 +268,17 @@ total 8
 git switch new_feature   # switch to new branch
 git switch -c branch1    # create and switch to it
 
+git merged-base br1 br2  # find the common ancestor of both branches
+
+# rename branch
+git branch -m mybr newbr   # mybr => newbr
+git branch -m newbr        # if in mybr already
+
+# delete branch
+git branch -d br1          # delete br1 
+git branch -D br1          # delete br1 even if it is not fully merged
+
+
 git checkout new_feature
 git branch
 root@kubernetes01:~/gitpractice# git branch
