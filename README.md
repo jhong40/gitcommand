@@ -370,6 +370,7 @@ git push origin --tags
 git push -d origin v1.0     # delete v1.0 tag from remote
 ```
 ### Reset Types
++ c1,c2,c3,c4,c5,c6,c7/head/main  reset to c5: c1,c2,c3,c4,c5/head/main    c6,c7 becomes orphan, can be branch to refer to it before reset
 + Soft Reset: Move HEAD, Doesn't change staging index, cur dir 
 ```
 git reset --soft <tree-is>
