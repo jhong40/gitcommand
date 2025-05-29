@@ -571,7 +571,7 @@ git push -u brancha origin     # -u is upstream, tracking
 
 # delete remote branch
 git push orgin :brancha  # delete brancha
-git push origin --delete brancha
+git push -d origin brancha   # delete remote brancha, tracking brancha, not local brancha
 ```
 # FLOW
 ```
