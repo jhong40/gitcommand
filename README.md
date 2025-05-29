@@ -530,7 +530,8 @@ root@kubernetes01:~/gitpractice#
 
 # Remote
 ### Remote: branch1
-### Local: tracking branch - origin/branch1, local branch -branch1
+### Local: origin/branch1 - snapshot of the remote branch 
+### local: branch1 - local tracking branch
 ```
 #remote branch cannot be check out
 git remote add origin https://github.com/....
