@@ -530,8 +530,8 @@ root@kubernetes01:~/gitpractice#
 
 # Remote
 ### Remote: branch1
-### Local: origin/branch1 - snapshot of the remote branch 
-### local: branch1 - local tracking branch
+### Local: origin/branch1 - snapshot of the remote branch - tracking branch
+### local: branch1 - local branch
 ```
 #remote branch cannot be check out
 git remote add origin https://github.com/....
@@ -575,6 +575,15 @@ git push -u brancha origin     # -u is upstream, tracking
 # delete remote branch
 git push orgin :brancha  # delete brancha
 git push -d origin brancha   # delete remote brancha, tracking brancha, not local brancha
+
+# prune - if branch deleted on remote, git fetch won't delete anything in local
+git fetch origin
+git remote prune origin --dry-run  
+git remote prune origin   # actually delete the tracking branch
+
+git fetch -p      # the same as the above
+
+
 ```
 # FLOW
 ```
