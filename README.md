@@ -1,3 +1,17 @@
+# Compare file with main
+```
+# in mybranch
+git diff main -- path/to/file
+# explicit 2 branch
+git diff main mybranch --path/to/file
+
+# see filename only
+git diff --name-only main mybranch
+
+```
+
+
+
 <details>
   <summary markdown="span">Low Level</summary>
  
