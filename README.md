@@ -1,3 +1,10 @@
+# Reglar sync
+```
+# in my branch
+git fetch origin
+git rebase origin/main
+git push --force-with-lease
+```
 # Compare file with main
 ```
 # in mybranch
